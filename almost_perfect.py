@@ -1,14 +1,22 @@
 "https://open.kattis.com/problems/almostperfect"
-while True:
-    number = int(input())
+import math
 
-    divisor = []
-    for i in range(1, number):
+while True:
+    try:
+        number = int(input().strip())
+    except EOFError:
+        break
+    
+    divisor_sum = 1
+    for i in range(2, int(math.sqrt(number)) + 1):
         if number % i == 0:
-            divisor.append(i)
-    if sum(divisor) == number:
+            divisor_sum += i
+            if i != number // i:
+                divisor_sum += number // i
+                    
+    if divisor_sum == number:
         print(number, "perfect")
-    elif sum(divisor) - number <= 2 and sum(divisor) - number >= -2:
+    elif abs(divisor_sum - number) <= 2:
         print(number, "almost perfect")
     else:
         print(number, "not perfect")
