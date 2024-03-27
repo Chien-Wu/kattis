@@ -1,3 +1,4 @@
+"https://open.kattis.com/problems/antipalindrome"
 def preprocess(text):
     # Remove non-alphabetic characters and convert to lowercase
     processed_text = ''.join(char.lower() for char in text if char.isalpha())
