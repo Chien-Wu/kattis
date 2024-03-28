@@ -22,13 +22,13 @@ for block in blocks:
 
 for block in blocks:
     if block[0] == "cylinder":
-        block[1] = block[1] * 1.9
+        block[1] = block[1] * 1.8
 
 blocks = sorted(blocks, key=lambda x: x[1])
 
 for block in blocks:
     if block[0] == "cylinder":
-        block[1] = int(block[1] / 1.9)
+        block[1] = int(block[1] / 1.8)
 
 if impossible:
     print("impossible")
